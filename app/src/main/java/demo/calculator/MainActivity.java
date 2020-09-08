@@ -19,9 +19,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     static StringBuilder calcLine = new StringBuilder();
     static StringBuilder resultLine = new StringBuilder();
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
     public void setLine(String s) {
         calcLine.append(s);
         calcLineShow.setText(calcLine.toString());
@@ -80,103 +76,120 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.zero:
                 setLine("0");
+                calculateBehind();
                 break;
             case R.id.nine:
                 setLine("9");
+                calculateBehind();
                 break;
             case R.id.eight:
                 setLine("8");
+                calculateBehind();
                 break;
             case R.id.seven:
                 setLine("7");
+                calculateBehind();
                 break;
             case R.id.six:
                 setLine("6");
+                calculateBehind();
                 break;
             case R.id.five:
                 setLine("5");
+                calculateBehind();
                 break;
             case R.id.four:
                 setLine("4");
+                calculateBehind();
                 break;
             case R.id.three:
                 setLine("3");
+                calculateBehind();
                 break;
             case R.id.two:
                 setLine("2");
+                calculateBehind();
                 break;
             case R.id.one:
                 setLine("1");
+                calculateBehind();
                 break;
             case R.id.correct:
                 if (!calcLine.toString().isEmpty()) {
                     calcLine.delete(calcLine.length() - 1, calcLine.length());
                     calcLineShow.setText(calcLine.toString());
+                    calculateBehind();
                     break;
                 }
             case R.id.divide:
                 if (!calcLine.toString().isEmpty())
                     setOperation("/");
+                calculateBehind();
                 break;
             case R.id.multiply:
                 if (!calcLine.toString().isEmpty())
                     setOperation("*");
+                calculateBehind();
                 break;
             case R.id.subtract:
                 if (calcLine.toString().isEmpty()) {
                     setLine("-");
+                    calculateBehind();
                     break;
-                } else setOperation("-");
-                break;
+                } else if (calcLine.toString().substring(calcLine.length() - 1).equals("/") |
+                        calcLine.toString().substring(calcLine.length() - 1).equals("*")) {
+                    setLine("-");
+                    calculateBehind();
+                    break;
+                } else {setOperation("-");
+                    calculateBehind();
+                break;}
             case R.id.add:
                 if (!calcLine.toString().isEmpty())
                     setOperation("+");
+                calculateBehind();
                 break;
             case R.id.dot:
                 if (!calcLine.toString().isEmpty()) {
                     setDot();
+                    calculateBehind();
                     break;
-                } else setLine("0.");
-                break;
+                } else {setLine("0.");
+                calculateBehind();
+                break;}
             case R.id.equals:
                 if (!calcLine.toString().isEmpty())
                     calculate();
+                calculateBehind();
                 break;
-
         }
     }
 
     private void setOperation(String s) {
-                if (calcLine.toString().substring(calcLine.length() - 1).equals(s)) { }
-                else if (calcLine.toString().substring(calcLine.length() - 1).equals("/") |
-                        calcLine.toString().substring(calcLine.length() - 1).equals("*") & s.equals("-")){
-                    calcLine.append(s);
-                    String completedString = calcLine.toString();
-                    calcLineShow.setText(completedString);
-                }
-                else if (calcLine.toString().substring(calcLine.length() - 1).equals("/") |
-                        calcLine.toString().substring(calcLine.length() - 1).equals("*") |
-                        calcLine.toString().substring(calcLine.length() - 1).equals("-") |
-                        calcLine.toString().substring(calcLine.length() - 1).equals("+") |
-                        calcLine.toString().substring(calcLine.length() - 1).equals(".")) {
-                    calcLine.delete(calcLine.length() - 1, calcLine.length());
-                    if (calcLine.toString().isEmpty()) {
-                        String completedString = calcLine.toString();
-                        calcLineShow.setText(completedString);
-                    } else {
-                        calcLine.append(s);
-                        String completedString = calcLine.toString();
-                        calcLineShow.setText(completedString);
-                    }
-                } else {
-                    calcLine.append(s);
-                    String completedString = calcLine.toString();
-                    calcLineShow.setText(completedString);
-                }
+        if (calcLine.toString().substring(calcLine.toString().length() - 1).equals(s)) {
+        } else if (calcLine.toString().substring(calcLine.toString().length() - 1).equals("/") |
+                calcLine.toString().substring(calcLine.toString().length() - 1).equals("*") |
+                calcLine.toString().substring(calcLine.toString().length() - 1).equals("-") |
+                calcLine.toString().substring(calcLine.toString().length() - 1).equals("+") |
+                calcLine.toString().substring(calcLine.toString().length() - 1).equals(".")) {
+            calcLine.delete(calcLine.toString().length() - 1, calcLine.toString().length());
+            if (calcLine.toString().isEmpty()) {
+                String completedString = calcLine.toString();
+                calcLineShow.setText(completedString);
+            } else {
+                calcLine.append(s);
+                String completedString = calcLine.toString();
+                calcLineShow.setText(completedString);
             }
+        } else {
+            calcLine.append(s);
+            String completedString = calcLine.toString();
+            calcLineShow.setText(completedString);
+        }
+    }
 
     private void calculate() {
-        try{
+        try {
             String end = calcLine.toString();
             Expression ex = new ExpressionBuilder(end).build();
             BigDecimal d = BigDecimal.valueOf(ex.evaluate());
@@ -188,28 +201,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calcLine.delete(calcLine.toString().length() - 2, calcLine.toString().length());
             }
             calcLineShow.setText(calcLine.toString());
+            resultShow.setText("");
         } catch (ArithmeticException exception0) {
-            Toast.makeText(getApplicationContext(),"НА 0 ДЕЛИТЬ НЕЛЬЗЯ",
+            Toast.makeText(getApplicationContext(), "НА 0 ДЕЛИТЬ НЕЛЬЗЯ",
                     Toast.LENGTH_LONG).show();
-        } catch (Exception ignored){}
+        } catch (Exception anyExceptions) {
+            Toast.makeText(getApplicationContext(), "НЕВОЗМОЖНО ПРОИЗВЕСТИ ПОДСЧЁТ",
+                    Toast.LENGTH_LONG).show();
+        }
     }
+
     private void calculateBehind() {
-        try{
-            Expression varCalc = new ExpressionBuilder(calcLine.toString()).build();
-            BigDecimal d = BigDecimal.valueOf(varCalc.evaluate());
-            resultLine.delete(0, resultLine.toString().length());
-            String completedString = d.toString();
-            resultLine.append(completedString);
-            if (resultLine.substring(resultLine.toString().length() - 1, resultLine.toString().length()).equals("0") &
-                    resultLine.substring(resultLine.toString().length() - 2, resultLine.toString().length() - 1).equals(".")) {
-                resultLine.delete(resultLine.toString().length() - 2, resultLine.toString().length());
+        if (calcLineShow.toString().isEmpty()) {
+            resultShow.setText(calcLine.toString());
+        } else {
+            try {
+                Expression varCalc = new ExpressionBuilder(calcLine.toString()).build();
+                BigDecimal d = BigDecimal.valueOf(varCalc.evaluate());
+                resultLine.delete(0, resultLine.toString().length());
+                String completedString = d.toString();
+                resultLine.append(completedString);
+                if (resultLine.substring(resultLine.toString().length() - 1, resultLine.toString().length()).equals("0") &
+                        resultLine.substring(resultLine.toString().length() - 2, resultLine.toString().length() - 1).equals(".")) {
+                    resultLine.delete(resultLine.toString().length() - 2, resultLine.toString().length());
+                }
+                resultShow.setText(resultLine.toString());
+            } catch (Exception anyExceptions) {
+                resultShow.setText("");
             }
-            resultShow.setText(resultLine.toString());
-        } catch (Exception ignored) { }
+        }
     }
 
     private void setDot() {
-        if (calcLine.toString().length() == 1&!calcLine.toString().equals("-")) {
+        if (calcLine.toString().length() == 1 & !calcLine.toString().equals("-")) {
             setLine(".");
         } else if (calcLine.toString().length() == 2) {
             if (!calcLine.toString().substring(1, 2).equals(".")) {
