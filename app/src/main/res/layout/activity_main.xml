@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:cursorVisible="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:textSize="23sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="end"/>
+
+    <EditText
+        android:id="@+id/output_text"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:cursorVisible="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:textSize="23sp"
+        app:layout_constraintTop_toBottomOf="@+id/input_text"
+        android:gravity="end"/>
+
+    <Button
+        android:id="@+id/seven"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/seven"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/output_text"
+        android:onClick="click_number"
+        android:background="@android:color/transparent"/>
+
+    <Button
+        android:id="@+id/eight"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/eight"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/seven"
+        app:layout_constraintTop_toBottomOf="@id/output_text"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/nine"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/nine"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/eight"
+        app:layout_constraintTop_toBottomOf="@id/output_text"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/correct"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:text="@string/correct"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/nine"
+        app:layout_constraintTop_toBottomOf="@id/output_text"
+        android:onClick="click_correct"/>
+
+    <Button
+        android:id="@+id/four"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/four"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seven"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/five"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/five"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/four"
+        app:layout_constraintTop_toBottomOf="@id/eight"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/six"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/six"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/five"
+        app:layout_constraintTop_toBottomOf="@id/nine"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/divide"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:text="@string/divide"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/six"
+        app:layout_constraintTop_toBottomOf="@id/correct"
+        android:onClick="click_operation"/>
+
+    <Button
+        android:id="@+id/one"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/one"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/four"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/two"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/two"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/one"
+        app:layout_constraintTop_toBottomOf="@id/five"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/three"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/three"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/two"
+        app:layout_constraintTop_toBottomOf="@id/six"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:text="@string/multiply"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/three"
+        app:layout_constraintTop_toBottomOf="@id/divide"
+        android:onClick="click_operation"/>
+
+    <Button
+        android:id="@+id/zero"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/zero"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/one"
+        android:onClick="click_number"/>
+
+    <Button
+        android:id="@+id/dot"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/dot"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/zero"
+        app:layout_constraintTop_toBottomOf="@id/two"
+        android:onClick="dot"/>
+
+    <Button
+        android:id="@+id/equals"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:text="@string/equals"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/dot"
+        app:layout_constraintTop_toBottomOf="@id/three"
+        android:onClick="equals"/>
+
+    <Button
+        android:id="@+id/subtract"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:text="@string/subtract"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/equals"
+        app:layout_constraintTop_toBottomOf="@id/multiply"
+        android:onClick="click_operation"/>
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:text="@string/add"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintLeft_toRightOf="@id/equals"
+        app:layout_constraintTop_toBottomOf="@id/subtract"
+        android:onClick="click_operation"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
