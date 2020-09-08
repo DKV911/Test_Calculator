@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <EditText
@@ -15,7 +14,7 @@
         android:cursorVisible="false"
         android:focusableInTouchMode="false"
         android:inputType="numberDecimal"
-        android:textSize="23sp"
+        android:textSize="29sp"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="end"
         android:importantForAutofill="no"
@@ -24,11 +23,11 @@
     <EditText
         android:id="@+id/output_text"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="65dp"
         android:cursorVisible="false"
         android:focusableInTouchMode="false"
         android:inputType="numberDecimal"
-        android:textSize="23sp"
+        android:textSize="29sp"
         app:layout_constraintTop_toBottomOf="@+id/input_text"
         android:gravity="end"
         android:importantForAutofill="no"
@@ -36,8 +35,8 @@
 
     <Button
         android:id="@+id/seven"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/seven"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -46,8 +45,8 @@
 
     <Button
         android:id="@+id/eight"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/eight"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/seven"
@@ -56,8 +55,8 @@
 
     <Button
         android:id="@+id/nine"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/nine"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/eight"
@@ -66,18 +65,19 @@
 
     <Button
         android:id="@+id/correct"
-        android:layout_width="79dp"
-        android:layout_height="79dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:text="@string/correct"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/nine"
         app:layout_constraintTop_toBottomOf="@id/output_text"
-        android:background="@drawable/ripple_effect"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <Button
         android:id="@+id/four"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/four"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -86,8 +86,8 @@
 
     <Button
         android:id="@+id/five"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/five"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/four"
@@ -96,8 +96,8 @@
 
     <Button
         android:id="@+id/six"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/six"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/five"
@@ -106,18 +106,19 @@
 
     <Button
         android:id="@+id/divide"
-        android:layout_width="79dp"
-        android:layout_height="79dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:text="@string/divide"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/six"
         app:layout_constraintTop_toBottomOf="@id/correct"
-        android:background="@drawable/ripple_effect"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <Button
         android:id="@+id/one"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/one"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -126,8 +127,8 @@
 
     <Button
         android:id="@+id/two"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/two"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/one"
@@ -136,8 +137,8 @@
 
     <Button
         android:id="@+id/three"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/three"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/two"
@@ -146,18 +147,19 @@
 
     <Button
         android:id="@+id/multiply"
-        android:layout_width="79dp"
-        android:layout_height="79dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:text="@string/multiply"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/three"
         app:layout_constraintTop_toBottomOf="@id/divide"
-        android:background="@drawable/ripple_effect"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <Button
         android:id="@+id/zero"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/zero"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -166,8 +168,8 @@
 
     <Button
         android:id="@+id/dot"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/dot"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/zero"
@@ -176,8 +178,8 @@
 
     <Button
         android:id="@+id/equals"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
         android:text="@string/equals"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/dot"
@@ -186,23 +188,25 @@
 
     <Button
         android:id="@+id/subtract"
-        android:layout_width="79dp"
-        android:layout_height="79dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:text="@string/subtract"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/equals"
         app:layout_constraintTop_toBottomOf="@id/multiply"
-        android:background="@drawable/ripple_effect"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <Button
         android:id="@+id/add"
-        android:layout_width="79dp"
-        android:layout_height="79dp"
+        android:layout_width="75dp"
+        android:layout_height="76dp"
         android:text="@string/add"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/equals"
         app:layout_constraintTop_toBottomOf="@id/subtract"
-        android:background="@drawable/ripple_effect"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@android:color/holo_blue_dark"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
