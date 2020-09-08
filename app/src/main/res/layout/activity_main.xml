@@ -17,7 +17,9 @@
         android:inputType="numberDecimal"
         android:textSize="23sp"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="end"/>
+        android:gravity="end"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/output_text"
@@ -28,7 +30,9 @@
         android:inputType="numberDecimal"
         android:textSize="23sp"
         app:layout_constraintTop_toBottomOf="@+id/input_text"
-        android:gravity="end"/>
+        android:gravity="end"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/seven"
@@ -38,8 +42,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/output_text"
-        android:onClick="click_number"
-        android:background="@android:color/transparent"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/eight"
@@ -49,7 +52,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/seven"
         app:layout_constraintTop_toBottomOf="@id/output_text"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/nine"
@@ -59,7 +62,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/eight"
         app:layout_constraintTop_toBottomOf="@id/output_text"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/correct"
@@ -69,7 +72,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/nine"
         app:layout_constraintTop_toBottomOf="@id/output_text"
-        android:onClick="click_correct"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/four"
@@ -79,7 +82,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/seven"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/five"
@@ -89,7 +92,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/four"
         app:layout_constraintTop_toBottomOf="@id/eight"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/six"
@@ -99,7 +102,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/five"
         app:layout_constraintTop_toBottomOf="@id/nine"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/divide"
@@ -109,7 +112,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/six"
         app:layout_constraintTop_toBottomOf="@id/correct"
-        android:onClick="click_operation"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/one"
@@ -119,7 +122,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/four"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/two"
@@ -129,7 +132,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/one"
         app:layout_constraintTop_toBottomOf="@id/five"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/three"
@@ -139,7 +142,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/two"
         app:layout_constraintTop_toBottomOf="@id/six"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/multiply"
@@ -149,7 +152,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/three"
         app:layout_constraintTop_toBottomOf="@id/divide"
-        android:onClick="click_operation"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/zero"
@@ -159,7 +162,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/one"
-        android:onClick="click_number"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/dot"
@@ -169,7 +172,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/zero"
         app:layout_constraintTop_toBottomOf="@id/two"
-        android:onClick="dot"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/equals"
@@ -179,7 +182,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/dot"
         app:layout_constraintTop_toBottomOf="@id/three"
-        android:onClick="equals"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/subtract"
@@ -189,7 +192,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/equals"
         app:layout_constraintTop_toBottomOf="@id/multiply"
-        android:onClick="click_operation"/>
+        android:background="@drawable/ripple_effect"/>
 
     <Button
         android:id="@+id/add"
@@ -199,7 +202,7 @@
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintLeft_toRightOf="@id/equals"
         app:layout_constraintTop_toBottomOf="@id/subtract"
-        android:onClick="click_operation"/>
+        android:background="@drawable/ripple_effect"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

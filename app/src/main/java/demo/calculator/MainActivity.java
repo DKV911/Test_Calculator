@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void calculateBehind() {
         if (calcLineShow.toString().isEmpty()) {
             resultShow.setText(calcLine.toString());
-        } else {
+        } else if(calcLine.toString().contains("/")|calcLine.toString().contains("*")|calcLine.toString().contains("-")|calcLine.toString().contains("+")){
             try {
                 Expression varCalc = new ExpressionBuilder(calcLine.toString()).build();
                 BigDecimal d = BigDecimal.valueOf(varCalc.evaluate());
